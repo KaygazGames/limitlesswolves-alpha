@@ -112,23 +112,12 @@ nav a:hover{color:var(--accent)}
 }
 
 /* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px;
-  margin-top:12px;
-}
-
 .gallery img{
   width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:10px;
+  max-width:400px;
+  border-radius:12px;
   cursor:pointer;
-  transition:.25s;
 }
-
-.gallery img:hover{transform:scale(1.05)}
 
 .lightbox{
   position:fixed;
@@ -158,7 +147,7 @@ nav a:hover{color:var(--accent)}
 
 <header>
   <a class="logo" href="index.html">
-    <img src="images/logo.jpeg">
+    <img src="images/logo.jpg" alt="Logo">
     <div>
       <strong>LIMITLESS WOLVES</strong>
       <div style="font-size:12px;color:var(--muted)">FLL Takımı</div>
@@ -167,9 +156,8 @@ nav a:hover{color:var(--accent)}
 
   <nav>
     <a href="index.html">Ana Sayfa</a>
-    <a href="#team">Takım</a>
     <a href="#gallery">Galeri</a>
-    <a href="project.html">Projeler</a>
+    <a href="project.html">Proje</a>
   </nav>
 
   <button class="hamburger" id="hamb">☰</button>
@@ -178,9 +166,8 @@ nav a:hover{color:var(--accent)}
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-panel">
     <a href="index.html">Ana Sayfa</a>
-    <a href="#team">Takım</a>
     <a href="#gallery">Galeri</a>
-    <a href="project.html">Projeler</a>
+    <a href="project.html">Proje</a>
   </div>
 </div>
 
@@ -189,17 +176,10 @@ nav a:hover{color:var(--accent)}
 <p>Algoritma, mekanik ve takım ruhu.</p>
 </section>
 
-<div class="card" id="team">
-<h3>Takım</h3>
-<p>Mühendislik ve yaratıcılığı birleştiren FLL ekibi.</p>
-</div>
-
 <div class="card" id="gallery">
 <h3>Galeri</h3>
 <div class="gallery">
-<img src="images/gallery1.jpeg">
-<img src="images/gallery2.jpg">
-<img src="images/gallery3.jpg">
+<img src="images/gallery.jpeg" id="galleryImg">
 </div>
 </div>
 
@@ -223,12 +203,10 @@ document.addEventListener("keydown",e=>{ if(e.key==="Escape") menu.style.display
 const lb=document.getElementById("lightbox")
 const lbImg=document.getElementById("lightboxImg")
 
-document.querySelectorAll(".gallery img").forEach(img=>{
- img.onclick=()=>{
-   lb.style.display="flex"
-   lbImg.src=img.src
- }
-})
+document.getElementById("galleryImg").onclick=()=>{
+  lb.style.display="flex"
+  lbImg.src="images/gallery1.jpeg"
+}
 
 lb.onclick=()=>lb.style.display="none"
 
