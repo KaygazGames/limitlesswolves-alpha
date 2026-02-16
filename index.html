@@ -13,7 +13,6 @@
   --card:#0f1724;
   --muted:#9aa7b8;
   --accent:#6be04a;
-  --accent2:#00c2ff;
 }
 
 body{
@@ -104,7 +103,7 @@ nav a:hover{color:var(--accent)}
   border-radius:16px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
   background:var(--card);
   padding:18px;
@@ -134,7 +133,7 @@ nav a:hover{color:var(--accent)}
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.8);
+  background:rgba(0,0,0,0.85);
   display:none;
   align-items:center;
   justify-content:center;
@@ -158,7 +157,7 @@ nav a:hover{color:var(--accent)}
 <div class="site">
 
 <header>
-  <a class="logo" href="#">
+  <a class="logo" href="index.html">
     <img src="images/logo.png">
     <div>
       <strong>LIMITLESS WOLVES</strong>
@@ -167,10 +166,10 @@ nav a:hover{color:var(--accent)}
   </a>
 
   <nav>
-    <a href="#">Ana Sayfa</a>
+    <a href="index.html">Ana Sayfa</a>
     <a href="#team">Takım</a>
     <a href="#gallery">Galeri</a>
-    <a href="/project/">Projeler</a>
+    <a href="project.html">Projeler</a>
   </nav>
 
   <button class="hamburger" id="hamb">☰</button>
@@ -178,10 +177,10 @@ nav a:hover{color:var(--accent)}
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-panel">
-    <a href="#">Ana Sayfa</a>
+    <a href="index.html">Ana Sayfa</a>
     <a href="#team">Takım</a>
     <a href="#gallery">Galeri</a>
-    <a href="/project/">Projeler</a>
+    <a href="project.html">Projeler</a>
   </div>
 </div>
 
@@ -197,7 +196,6 @@ nav a:hover{color:var(--accent)}
 
 <div class="card" id="gallery">
 <h3>Galeri</h3>
-
 <div class="gallery">
 <img src="images/gallery1.jpg">
 <img src="images/gallery2.jpg">
@@ -218,14 +216,10 @@ const hamb=document.getElementById("hamb")
 const menu=document.getElementById("mobileMenu")
 
 hamb.onclick=()=>menu.style.display="flex"
-menu.onclick=e=>{
- if(e.target===menu) menu.style.display="none"
-}
-document.addEventListener("keydown",e=>{
- if(e.key==="Escape") menu.style.display="none"
-})
+menu.onclick=e=>{ if(e.target===menu) menu.style.display="none" }
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") menu.style.display="none" })
 
-/* GALLERY LIGHTBOX */
+/* LIGHTBOX */
 const lb=document.getElementById("lightbox")
 const lbImg=document.getElementById("lightboxImg")
 
